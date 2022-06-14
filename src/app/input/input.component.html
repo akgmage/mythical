@@ -1,6 +1,13 @@
 <div>
     <label class="label"> {{ label }}</label>
-    <input [formControl]="control" />
+    <div class="control">
+        <input 
+            class="input" 
+            [formControl]="control" 
+            [ngClass]="{ 'is-danger': control.dirty && control.touched && control.errors }"
+        />
+    </div>
+    
     <ng-container 
         *ngIf="
         control.dirty &&
