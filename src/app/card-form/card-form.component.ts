@@ -9,7 +9,12 @@ export class CardFormComponent implements OnInit {
   cardForm = new FormGroup({
     name: new FormControl(
       '', 
-      [Validators.required, Validators.minLength(3)],
+      [
+        Validators.required, 
+        Validators.minLength(3),
+        // Validators.maxLength(6),
+        // Validators.pattern(/\s/)
+      ],
     ),
   });
   constructor() { }
