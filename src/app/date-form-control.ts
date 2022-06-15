@@ -6,6 +6,10 @@ export class DateFormControl extends FormControl {
             super.setValue(this.value, {...options, emitModelToViewChange: true});
             return;
         }
+        if( value.length > 5) {
+            super.setValue(this.value, {...options, emitModelToViewChange: true});
+            return;
+        }
         console.log(value);
         super.setValue(value, options);
     }
